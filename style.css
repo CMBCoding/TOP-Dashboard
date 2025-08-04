@@ -1,0 +1,199 @@
+/*Josh's Custom CSS Reset. https://www.joshwcomeau.com/css/custom-css-reset/*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+/* Google Fonts */
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.megrim {
+  font-family: "Megrim", system-ui;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.megrim-bold {
+  font-family: "Megrim", system-ui;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Google Icons */
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+/* Root */
+:root {
+  --hellenic-blue: #0D5EAF;
+}
+
+/* Visualizer Stylings */
+
+.page-wrapper {
+  background-color: var(--hellenic-blue);
+  display: grid;
+  grid-template-columns: minmax(10.37rem, 1fr) 5fr;
+  grid-template-rows: repeat(3, 1fr);
+  /* grid-template-areas: 
+  "sb hd hd hd hd"
+  "sb ar ar ar an"
+  "sb ar ar ar an"
+  "ab ar ar ar an"; */
+  gap: 5px;
+  height: 100%;
+}
+
+.db-header {
+  padding: 0.5rem 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+#logo {
+  fill: #0D5EAF;
+  height: 3rem;
+  width: 2rem;
+}
+
+.sidebar {
+  display: grid;
+  background-color: #F5EAE0;
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+  grid-template-rows: 4rem 1.3fr 1fr;
+}
+
+.cap-em {
+  font-weight: 600;
+  color: var(--hellenic-blue);
+}
+
+/* .sb-nav {
+  display: grid;
+  grid-template-areas: 
+  "icon link"
+  "icon link"
+  "icon link"
+  "icon link"
+  "icon link";
+} */
+
+.sb-nav-icon {
+  /* display: inline;
+  justify-self: center; */
+  height: 1.5rem;
+  fill: var(--hellenic-blue);
+}
+
+.sb-nav-link {
+  display: grid;
+  padding: 0.4rem 0.5rem;
+  /* height: minmax(2.3rem, 3.8rem); */
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  justify-items: start;
+}
+
+.sb-nav-link:hover {
+  background-color: var(--hellenic-blue);
+  color: #FFFFFF;
+  font-weight: 500;
+}
+.sb-nav-link:hover .sb-nav-icon{
+  fill: #FFFFFF;
+}
+
+.main {
+  background-color: cadetblue;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+}
+
+.header {
+  background-color: aquamarine;
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
+}
+
+.article {
+  background-color: orange;
+  grid-column: 1 / 4;
+  grid-row: 2 / 5;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 5px;
+}
+
+.card {
+  background-color: #fff;
+  border: solid 1px salmon;
+}
+
+
+
