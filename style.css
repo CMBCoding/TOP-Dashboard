@@ -349,8 +349,7 @@ h1, h2, h3, h4, h5, h6 {
 .sb-r-schedule {
   grid-row: 1 / 4; 
   display: grid;
-  /* grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1f 1fr; */
+  grid-template-rows: 1fr 4fr;
   background-color: var(--sparta-wine);
   padding: 5px 10px;
   border: double 5px var(--nubian-ivory);
@@ -361,12 +360,15 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--tyrian-purple);
   padding: 5px 10px;
   display: grid;
+  grid-template-rows: repeat(8, 1fr);
   gap: 5px;
+  /* max-width: 13.875rem; */
   border: double 5px var(--nubian-ivory);
 }
 .sb-r-text {
   color: var(--nubian-ivory);
   font-weight: bold;
+  margin: 0;
 }
 
 .sb-r-lower {
@@ -377,10 +379,32 @@ h1, h2, h3, h4, h5, h6 {
 .sb-r-schedule-box {
   background-color: white;
   border-left: double 5px var(--tyrian-purple);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.sb-r-schedule-box-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1.2rem);
+  width: 100%;
+  height: 1rem;
 }
 
 .sb-r-schedule-box ul li {
-  list-style-type: square;
+  list-style-type: none;
+  padding-left: 0.3rem;  
+  width: 100%;
+}
+
+.task {
+  margin-right: .2rem;
+
+}
+.task:checked + label {
+  text-decoration: line-through 3px var(--sparta-wine);
 }
 
 .sb-r-box {
@@ -390,9 +414,11 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-areas: 
   "sb-pfp sb-handle"
   "sb-pfp sb-user";
+  /* font-size: 0.9rem; */
   grid-template-columns: auto 4fr;
   grid-template-rows: 1fr;
   padding: 0.2rem;
+  min-width: 12rem;
 }
 
 .sb-profile-pic-sm {
