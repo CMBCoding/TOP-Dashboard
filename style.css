@@ -316,6 +316,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Main Content Stylings */
 .main {
   background-color: orange;
+  border: double 6px var(--nubian-ivory);
   grid-column: 2 / 3;
   grid-row: 4 / 13;
   display: grid;
