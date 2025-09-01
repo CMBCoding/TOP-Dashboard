@@ -89,6 +89,12 @@ h1, h2, h3, h4, h5, h6 {
   --athens-ochre: #a13d1f;
   --sparta-wine: #AC1E44;
   --tyrian-purple: #66023C;
+  --news-cat-health: #4CAF50;
+  --news-cat-science: #2196F3;
+  --news-cat-entertainment: #9C27B0;
+  --news-cat-breaking: #F44336;
+  --news-cat-world: #FF9800;
+  --news-cat-crime: #000080;
 }
 
 /* General Stylings */
@@ -100,6 +106,10 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-rows: repeat(12, 1fr) 0.5fr;
   gap: 5px;
   height: 100%;
+}
+
+.bold {
+  font-weight: 600;
 }
 
 .cap-em {
@@ -327,30 +337,26 @@ h1, h2, h3, h4, h5, h6 {
   ;
   /* grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;  */
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(12, 1fr);
-  gap: 0.6rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(14, 1fr);
+  gap: 0.6rem 0.3rem;
   padding: 0rem 0.6rem;
   justify-items: center;
   align-content: center;
 }
 
 .card {
-  /* #FDFBF9 */
   background-color: #fff;
   display: grid;
   grid-template-areas: 
   "news-icon news-title news-title news-title news-title news-title news-title"
   "news-category news-image news-image news-image news-image news-image news-image"
+  "news-category news-article news-article news-article news-article news-article news-article"
   "news-category news-summary news-summary news-summary news-summary news-summary news-summary"
   ;
   grid-template-columns: 1fr repeat(6, 1fr);
-  grid-template-rows: 1fr 1fr 6fr;
-  /* min-width: 80%;
-  max-width: 80%; */
+  grid-template-rows: 1fr 1fr 1fr 5fr;
   width: 100%;
-  border-right: double 10px var(--hellenic-blue);
-  border-left: double 10px var(--hellenic-blue);
 }
 
 #news-title {
@@ -360,7 +366,7 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: 1fr 2fr;
   font-family: "Megrim", system-ui;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--hellenic-blue);
   text-align: left;
 }
@@ -368,23 +374,38 @@ h1, h2, h3, h4, h5, h6 {
 .news-card-icon {
   grid-area: news-icon;
   justify-self: center;
-  height: 2rem;
+  height: 2.1rem;
   padding: 0.1rem;
+  padding-right: 0.2rem;
+  margin-right: 0.188rem;
+  fill: var(--corinth-chalk);
 }
 .news-card-title {
   grid-area: news-title;
-  /* font-family: "Megrim", system-ui; */
+  font-family: "Montserrat", sans-serif;
   text-align: left;
   align-self: center;
+  font-weight: bold;
+  font-size: 1rem;
   padding-left: 0.3rem;
 }
 .news-image {
   grid-area: news-image;
   height: 4rem;
-  /* width: 4rem; */
-  justify-self: left;
+  width: min-content;
+  justify-self: center;
   align-self: center;
-  /* border: 2px solid var(--hellenic-blue); */
+}
+.news-article {
+  grid-area: news-article;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-align: left;
+  padding: 0.1rem;
+  padding-left: 0.2rem;
+  color: var(--greek-onyx);
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 .news-category {
   grid-area: news-category;
@@ -392,57 +413,135 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   text-align: left;
   writing-mode: vertical-rl;
-  /* text-orientation: sideways; */
   text-align: center;
-  /* padding-right: 1rem; */
   display: flex;
-  /* padding-left: 0.3rem; */
+  padding-top: 0.5rem;
   color: var(--greek-onyx);
-  /* font-size: 1.2rem; */
   align-items: center;
+  /* font-size: 1rem; */
+  color: var(--corinth-chalk);
   justify-content: flex-start;
+  margin-right: 0.1rem;
+  /* border-right: 3px solid var(--corinth-chalk); */
 }
 .news-summary {
   grid-area: news-summary;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   text-align: left;
-  padding: 0.3rem;
+  /* padding: 0.3rem; */
+  padding: 0.1rem 0.2rem;
   color: var(--greek-onyx);
-  font-size: 0.9rem;
-  line-height: 1.2rem;
+  font-size: 0.8rem;
+  line-height: 0.9rem;
 }
-
+.read-more {
+  font-weight: bold;
+  color: var(--hellenic-blue);
+  cursor: pointer;
+}
 
 #card1 {
   grid-area: card1;
   grid-column: 1 / 2;
-  grid-row: 2 / 7;
+  grid-row: 2 / 8;
+  border-left: double 10px var(--news-cat-entertainment);
+  border-right: double 10px var(--news-cat-entertainment);
 }
+#card1 > .news-card-icon {
+  background-color: var(--news-cat-entertainment);
+}
+#card1 > .news-category {
+  background-color: var(--news-cat-entertainment);
+}
+
 #card2 {
   grid-area: card2;
   grid-column: 2 / 3;
-  grid-row: 2 / 7;
+  grid-row: 2 / 8;
+  border-left: double 10px var(--news-cat-science);
+  border-right: double 10px var(--news-cat-science);
 }
+#card2 > .news-card-icon {
+  background-color: var(--news-cat-science);
+}
+#card2 > .news-category {
+  background-color: var(--news-cat-science);
+}
+
 #card3 {
   grid-area: card3;
   grid-column: 3 / 4;
-  grid-row: 2 / 7;
+  grid-row: 2 / 8;
+  border-left: double 10px var(--news-cat-health);
+  border-right: double 10px var(--news-cat-health);
 }
+#card3 > .news-card-icon {
+  background-color: var(--news-cat-health);
+}
+#card3 > .news-category {
+  background-color: var(--news-cat-health);
+}
+
 #card4 {
   grid-area: card4;
   grid-column: 1 / 2;
-  grid-row: 7 / 12;
+  grid-row: 8 / 14;
+  border-left: double 10px var(--news-cat-breaking);
+  border-right: double 10px var(--news-cat-breaking);
 }
+#card4 > .news-card-icon {
+  background-color: var(--news-cat-breaking);
+}
+#card4 > .news-category {
+  background-color: var(--news-cat-breaking);
+}
+
 #card5 {
   grid-area: card5;
   grid-column: 2 / 3;
-  grid-row: 7 / 12;
+  grid-row: 8 / 14;
+  border-left: double 10px var(--news-cat-world);
+  border-right: double 10px var(--news-cat-world);
 }
+#card5 > .news-card-icon {
+  background-color: var(--news-cat-world);
+}
+#card5 > .news-category {
+  background-color: var(--news-cat-world);
+}
+
 #card6 {
   grid-area: card6;
   grid-column: 3 / 4;
-  grid-row: 7 / 12;
+  grid-row: 8 / 14;
+  border-left: double 10px var(--news-cat-crime);
+  border-right: double 10px var(--news-cat-crime);
+}
+#card6 > .news-card-icon {
+  background-color: var(--news-cat-crime);
+}
+#card6 > .news-category {
+  background-color: var(--news-cat-crime);
+}
+
+.news-health {
+  fill: var(--news-cat-health);
+}
+.news-science {
+  fill: var(--news-cat-science);
+}
+.news-entertainment {
+  fill: var(--news-cat-entertainment);
+}
+.news-breaking {
+  fill: var(--news-cat-breaking);
+}
+.news-world {
+  fill: var(--news-cat-world);
+}
+.news-crime {
+  fill: var(--news-cat-crime);
 }
 
 /* Right sidebar stylings */
