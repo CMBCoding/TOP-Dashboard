@@ -85,15 +85,16 @@ h1, h2, h3, h4, h5, h6 {
   --faded-marble: #F5EAE0;
   --corinth-chalk: #FBFFFF;
   --nubian-ivory: #FFFFF0;
+  --vesuvian-ash: #E5E4E2;;
   --greek-onyx: #353839;
   --athens-ochre: #a13d1f;
   --sparta-wine: #AC1E44;
   --tyrian-purple: #66023C;
   --news-cat-health: #4CAF50;
   --news-cat-science: #2196F3;
-  --news-cat-top: #F44336;
+  --news-cat-top: #AF002A;
   --news-cat-entertainment: #9C27B0;;
-  --news-cat-world: #FF9800;
+  --news-cat-world: #3B7A57;
   --news-cat-crime: #000080;
 }
 
@@ -169,7 +170,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Header Stylings */
 .header {
-  background-color: #E5E4E2;
+  background-color: var(--vesuvian-ash);
   grid-column: 1 / 5;
   grid-row: 1 / 2;
   display: grid;
@@ -247,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Profile Bar Stylings */
 .profile {
-  background-color: #E5E4E2;
+  background-color: var(--vesuvian-ash);
   display: grid;
   height: 12rem;
   grid-template-columns: repeat(4, 1fr);
@@ -325,8 +326,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Main Content Stylings */
 .main {
-  background-color: orange;
-  border: double 6px var(--nubian-ivory);
+  background-color: var(--vesuvian-ash);
+  border: double 6px var(--hellenic-blue);
   grid-column: 2 / 3;
   grid-row: 4 / 13;
   display: grid;
@@ -344,8 +345,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card {
-  background-color: #fff;
+  background-color: var(--corinth-chalk);
   display: grid;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   grid-template-areas: 
   "news-category news-title news-title news-title news-title news-title news-title"
   "news-category news-image news-image news-image news-image news-image news-image"
@@ -362,7 +364,7 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: 1fr 2fr;
   font-family: "Megrim", system-ui;
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 1.8rem;
   color: var(--hellenic-blue);
   text-align: left;
@@ -586,16 +588,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .sb-r-schedule-box ul li {
   list-style-type: none;
+  font-size: 0.875rem;
   padding-left: 0.3rem;  
   width: 100%;
 }
 
 .task {
   margin-right: .2rem;
-
 }
 .task:checked + label {
   text-decoration: line-through 3px var(--sparta-wine);
+}
+
+.to-do-task-time {
+  font-style: italic;
 }
 
 .sb-r-box {
